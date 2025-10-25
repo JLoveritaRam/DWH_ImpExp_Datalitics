@@ -1,0 +1,28 @@
+/*
+====================================
+CREACION DE LA BASE DE DATOS DE IMP17PE
+si existe lo borra y vuelve a crearla con schemas
+cuidado si esto se acciona todos los avances en la base de datos seran borrados
+====================================
+*/
+use master;
+
+if exists (select * from sys.databases where name = [DB_Imp2017pe])
+begin
+	alter database [DB_Imp2017pe] set single_user with rollback immediate;
+	drop database [DB_Imp2017pe];
+end;
+go
+
+create database [DB_Imp2017pe];
+
+use [DB_Imp2017pe]
+
+--- creacion de schemas
+
+create schema bronze;
+go
+create schema silver;
+go
+create schema Gold;
+Go
