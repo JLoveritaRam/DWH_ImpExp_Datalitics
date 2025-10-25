@@ -1,0 +1,80 @@
+========================
+creacion de tablas
+========================
+
+
+----  DDL definicion de la extructura
+
+FUENTE DE ADUNAS
+if object_id ('Intermediaria_SemanaX', 'U') is not null
+	drop table Intermediaria_SemanaX;
+
+CREATE TABLE Intermediaria_SemanaX
+	aduana
+	fecha_ing
+	etc..
+scritp guardado
+
+crear las semanas necesarias
+crear las tablas base a relacionar
+
+
+-- desarrollar SQL script de carga de datos
+
+Bulk insert- carga masiva de datos
+
+ya se tiene el script
+
+truncate table TB_Enero,
+
+bulk insert nombre de la tabla destino ej.: TB_Enero
+from 'ubicacion del archivo'
+with (
+	firstrow = 2,
+	fielterminator = ',',
+	tablock 
+);
+
+-- probar la calidad de la data cargad
+
+select * from nombre de la tabla
+select count(*) from nombre de la tabla
+
+crear las tablas siguientes de meses o semestres
+
+--- crear el store procedure
+
+
+create or alter procedure bronce.carga_borce as
+Begin
+	Declare @start_time datatime , @end_time datatime; -- para medir los tiempos de demora en la carga de cada tabla
+	Print '========================';
+	Print 'cargando tablas bronce';
+	Print '========================';
+
+	set @star_time = getdate();
+	truncate table TB_Enero;
+
+bulk insert nombre de la tabla destino ej.: TB_Enero
+from 'ubicacion del archivo'
+with (
+	firstrow = 2,
+	fielterminator = ',',
+	tablock 
+);
+	set @end_time = getdate();
+print '>> duracion de carga: ' + cast(datediff(second, @star_time, @end_time)) + 'segundos'
+
+
+	set @star_time = getdate();
+		truncate table febrero
+	....
+	
+end
+
+
+-- probar el store procedure
+
+exec bronce.carga_borce
+
+
