@@ -30,7 +30,18 @@ Licencia
 
 Mit license
 
-Acerca de mi
+DESCRIPCION DEL PROEYCTO
+
+
+IMPORTANTES HERRAMIENTAS Y LINKS
+
+
+REQUERIMIENTOS DEL PROYECTO
+
+ARQUITECTURA DEL PROYECTO
+
+
+ACERCA DE MI
 
 Ingeniero que es entusiasta de las herramientas tecnologicas para el mercadeo.
 
